@@ -51,14 +51,9 @@ public class MainActivity extends AppCompatActivity {
                         public void onResponse(Call<User> call, Response<User> response) {
 
                             int code = response.code();
-                            User user = response.body();
-                            String name = user.name;
                             if (code == 200) {
-<<<<<<< HEAD
                                 User user = response.body();
                                 String name = user.name;
-=======
->>>>>>> fc18f31... Home Screen created with welcome message for the user
                                 Toast.makeText(getBaseContext(), "Login response " + code + ": Successful! Welcome", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(v.getContext(), HomeActivity.class);
                                 intent.putExtra("User_Name", name);

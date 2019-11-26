@@ -7,10 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-<<<<<<< HEAD
-=======
-import android.widget.ArrayAdapter;
->>>>>>> fc18f31... Home Screen created with welcome message for the user
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -53,15 +49,7 @@ public class HomeActivity extends AppCompatActivity{
 
     private TextView welcome;
     private ListView products;
-<<<<<<< HEAD
     private ListAdapter mListAdapter;
-    private EditText quantity;
-=======
-//    private ArrayAdapter mArrayAdapter;
-    private ListAdapter mListAdapter;
->>>>>>> fc18f31... Home Screen created with welcome message for the user
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,10 +62,7 @@ public class HomeActivity extends AppCompatActivity{
         welcome.setText("Welcome, " + name );
         products = (ListView) findViewById(R.id.prodList);
         mListAdapter = new ListAdapter(getApplicationContext(), R.layout.home_list,BeerArray);
-<<<<<<< HEAD
-        quantity = findViewById(R.id.quantEdit);
-=======
->>>>>>> fc18f31... Home Screen created with welcome message for the user
+
 
         if(products != null){
             products.setAdapter(mListAdapter);
@@ -89,22 +74,7 @@ public class HomeActivity extends AppCompatActivity{
                 Log.v("Beer",BeerArray[position].getTitle());
             }
         });
-<<<<<<< HEAD
-=======
 
-//        mArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, myStringArray);
-//
-//        if(products != null){
-//            products.setAdapter(mArrayAdapter);
-//        }
-//
-//        products.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Log.v("BEER:", myStringArray[position]);
-//            }
-//        });
 
->>>>>>> fc18f31... Home Screen created with welcome message for the user
     }
 }
