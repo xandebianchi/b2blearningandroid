@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                                 //intent.putExtra("User_Name", String.valueOf(name));
 
                             } else {
-                                Toast.makeText(getBaseContext(), "Login response : Error " + code + ", incorrect credentials", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getBaseContext(), "Invalid e-mail and/or password", Toast.LENGTH_LONG).show();
                             }
 
                         }

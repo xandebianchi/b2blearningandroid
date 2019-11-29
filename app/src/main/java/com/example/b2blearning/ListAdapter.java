@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,14 +47,26 @@ public class ListAdapter extends ArrayAdapter<Beer> {
         TextView nameView = list.findViewById(R.id.nameProd);
         TextView descView = list.findViewById(R.id.descProd);
         TextView priceView = list.findViewById(R.id.priceProd);
+        final EditText quantityEdit = list.findViewById(R.id.quantEdit);
 
         //Get the data from the data array
-        Beer beer = mData[position];
+        final Beer beer = mData[position];
 
         //Setting the view to reflect the data we need to display
         nameView.setText(beer.getTitle());
         descView.setText(beer.getDescription());
         priceView.setText(beer.getPrice());
+        quantityEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus){
+                    beer.setQuantity(quantityEdit.getText().toString());
+                }
+            }
+        });
+        quantityEdit.setText(beer.getQuantity());
+
+
 
 //        int resId = mContext.getResources().getIdentifier(beer.getNameOfImage(), "drawable", mContext.getPackageName());
 //        imageView.setImageResource(resId);
